@@ -1,0 +1,23 @@
+{
+    "name": "yuyaprgrm/adhoc-ahodog",
+    "require": {
+        "ext-yaml": ">=2.0.0",
+        "pocketmine/nbt": "^0.3.3",
+        "pocketmine/bedrock-data": "^2.0",
+        "pocketmine/bedrock-protocol": "^19.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "yuyaprgrm\\AdhocAhodog\\": "src/"
+        },
+        "files": [
+            "src/Constants.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "yuyaprgrm",
+            "email": "yuyaprgrm@outlook.jp"
+        }
+    ]
+}

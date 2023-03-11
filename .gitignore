@@ -1,0 +1,5 @@
+# composer
+vendor/
+
+# outfiles
+canonical_block_states.yml
