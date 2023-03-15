@@ -14,17 +14,14 @@ final class CanonicalBlockStatesNBT{
 
     public function write(string $filename) : void{
         $blockPaletteContents = file_get_contents(self::FILE_PATH);
-        $translated = array_map(
-			function(TreeRoot $root) : array{
-				$tag =  $root->mustGetCompoundTag();
-                return [
-                    "name" => $tag->getString("name"),
-                    "states" => $tag->getCompoundTag("states")->toString(),
-                    "version" => $tag->getInt("version")
-                ];
-			},
-			(new NetworkNbtSerializer())->readMultiple($blockPaletteContents)
-		);
+        $translated = array_map(function(TreeRoot $root) : array{
+            $tag =  $root->mustGetCompoundTag();
+            return [
+                "name" => $tag->getString("name"),
+                "states" => $tag->getCompoundTag("states")->toString(),
+                "version" => $tag->getInt("version")
+            ];
+    	},(new NetworkNbtSerializer())->readMultiple($blockPaletteContents));
 
         yaml_emit_file($filename, $translated);
     }
